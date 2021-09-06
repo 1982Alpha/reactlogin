@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h3{
+    color: rgb(14, 13, 13);
+    font-weight: bold;
+}
+.title{
+text-align: center;
+vertical-align: bottom;
+background-color: rgb(130, 194, 178);
+height: 40px;
+padding-top: 5px;
+}
+.coloumnPan{
+    height:80vh ;
+    border-color: teal;
+    border-style: solid;
+
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+table .th.td{
+    border: 1px solid gray;
+}

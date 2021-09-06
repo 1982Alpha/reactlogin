@@ -1,0 +1,62 @@
+<div class="container">
+    <h3 class="title">Reative Register Form</h3>
+    <br><br>
+    <form [formGroup]="userForm" >
+    <div class="row">
+        <div class="row col-sm-5">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" formControlName="firstname" 
+                class="form-control" autocomplete="off">
+                <span class="help-block" *ngIf="!userForm.get('firstname').valid && userForm.get('firstname').touched">Please Enter Valid Name!</span>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname"  formControlName="lastname"  class="form-control" autocomplete="off">
+            </div>            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" formControlName="email"  class="form-control" autocomplete="off" >
+                <span class="help-block" *ngIf="!userForm.get('email').valid && userForm.get('email').touched">Please Enter Valid Name!</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="radio" value="male" formControlName="gender" name="gender">Male
+                <input type="radio" value="female" formControlName="gender" name="gender">Female
+            </div>
+            <div class="form-group">
+                <label for="isMarried">Married</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox"  name="isMarried" formControlName="isMarried" >
+            </div>         
+    </div>
+    <div class="row col-sm-2"></div>
+    <div class="row col-sm-5">
+     <div class="form-group"formGroupName="address">
+        <div class="form-group" >
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="country" formControlName="country"  class="form-control">
+                    <option *ngFor="let c of  countryList">
+                       {{c.countryname}}
+                    </option>
+                </select>
+            </div>            
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" formControlName="city" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" id="street" name="street" formControlName="street" class="form-control">
+        </div>
+    </div>
+        <div class="form-group">
+            <button class="btn btn-info" (click)=" onSave()">Submit</button>
+           </div>       
+    </div>
+   
+    </div>
+    </form>
+</div>
